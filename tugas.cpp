@@ -57,3 +57,38 @@ public:
     }
 };
 
+int main() {
+
+    // Pointer base class
+    RekeningBank* rekening1;
+    RekeningBank* rekening2;
+    RekeningBank* rekening3;
+
+    // Objek berbagai jenis rekening
+    rekening1 = new RekeningSyariah(5000000);
+    rekening2 = new RekeningKonvensional(5000000);
+    rekening3 = new RekeningPremium(100000001);
+
+    cout << "=== Rekening Syariah ===" << endl;
+    rekening1->potongAdmin();
+    rekening1->tampilSaldo();
+
+    cout << endl;
+
+    cout << "=== Rekening Konvensional ===" << endl;
+    rekening2->potongAdmin();
+    rekening2->tampilSaldo();
+
+    cout << endl;
+
+    cout << "=== Rekening Premium ===" << endl;
+    rekening3->potongAdmin();
+    rekening3->tampilSaldo();
+
+    // Hapus memori
+    delete rekening1;
+    delete rekening2;
+    delete rekening3;
+
+    return 0;
+}
